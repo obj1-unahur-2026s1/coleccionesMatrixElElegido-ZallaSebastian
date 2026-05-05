@@ -1,7 +1,5 @@
 import personaje.*
 
-
-
 object nave {
 const pasajeros = [neo,morfeo,trinity]
 method subir(unPasajero) {
@@ -22,7 +20,7 @@ method mayorVitalidad() = pasajeros.max({p => p.vitalidad()})
 
 method estaElegido() = pasajeros.any({p => p.elegido()})
 
-method vitalidadEquilibrada() = self.mayorVitalidad() <= self.menorVitalidad() * 2
+method vitalidadEquilibrada() = self.mayorVitalidad().vitalidad() <= self.menorVitalidad().vitalidad() * 2
 method menorVitalidad() = pasajeros.min({p => p.vitalidad()})
 
 method chocar() {
@@ -44,8 +42,3 @@ method saltan(unaLista) {
 method noElegido() = pasajeros.filter({p => !p.elegido()})
 
 }
-
-
-
-
-
